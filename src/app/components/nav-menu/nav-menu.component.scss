@@ -1,0 +1,10 @@
+.nav-menu{
+
+	&__items{
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		background-color: rgba(250, 235, 215, 0.39);
+    	height: 51px;
+	}
+}
