@@ -1,0 +1,10 @@
+<div class="apod-card">
+	<h3 class="apod-card__title">{{data.title}}</h3>
+		<img class="apod-card__img" src={{data.url}} alt={{data.title}}>
+		<div *ngIf="details" class="apod-card__description">
+			<button mat-button color="primary" (click)="showDetails(false)">hide details</button>
+			<p class="apod-card__description-text">{{data.explanation}}</p>
+			<p>{{data.date}}</p>
+		</div>
+		<button mat-button color="primary" *ngIf="!details" (click)="showDetails(true)">show details</button>
+</div>

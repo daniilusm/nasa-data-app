@@ -1,0 +1,26 @@
+.apod{
+	
+	&__header {
+		height: 300px;
+		text-align: center;
+		// background: no-repeat url('https://i.pinimg.com/originals/9b/02/e3/9b02e333bf466daed6195c7a2a7aceb8.jpg');
+	}
+
+	&__heading{
+		padding-top: 100px;
+	}
+
+	&__cards{
+		margin-bottom: 50px;
+	}
+
+	&__form{
+		display: flex;
+    	justify-content: center;
+	}
+
+	&__form-btn{
+		height: 50px;
+		margin-left: 20px;
+	}
+}

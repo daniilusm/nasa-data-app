@@ -1,6 +1,7 @@
 <nav class="nav-menu">
-	<ul class="nav-menu__items">
-		<li class="nav-menu__item">APOD</li>
-		<li class="nav-menu__item">OTHER</li>
-	</ul>
+	<img class="nav-menu__logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/NASA_logo.svg/2449px-NASA_logo.svg.png" alt="logo">
+	<div class="nav-menu__items">
+		<button mat-button class="nav-menu__item" (click)="goToHomePage()">HOME</button>
+		<button mat-button class="nav-menu__item" (click)="goToAPOD()">APOD</button>
+	</div>
 </nav>

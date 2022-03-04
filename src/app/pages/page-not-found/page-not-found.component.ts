@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-nav-menu',
-  templateUrl: './nav-menu.component.html',
-  styleUrls: ['./nav-menu.component.scss']
+  selector: 'app-page-not-found',
+  templateUrl: './page-not-found.component.html',
+  styleUrls: ['./page-not-found.component.scss']
 })
-export class NavMenuComponent implements OnInit {
+export class PageNotFoundComponent implements OnInit {
 
   constructor(private router: Router) { }
 
@@ -15,10 +15,6 @@ export class NavMenuComponent implements OnInit {
 
   goToHomePage(): void {
     this.router.navigateByUrl("/home");
-  }
-
-  goToAPOD(): void {
-    this.router.navigateByUrl("/apod");
   }
 
 }

@@ -1,0 +1,15 @@
+.home{
+
+	&__heading{
+	height: 525px;
+	background-color: black;
+	display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+	background: url('https://img2.goodfon.ru/wallpaper/nbig/1/84/stars-space-mystery.jpg');
+	}
+
+	&__logo{
+		height: 100px;
+	}
+}

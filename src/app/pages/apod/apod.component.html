@@ -1,8 +1,21 @@
-<div>
-	<h1>Astronomy Picture of the Day</h1>
-</div>
-<button (click)="getData()">get data</button>
-<div class="apod-card" *ngFor="let item of data">
-	<h1>{{item.title}}</h1>
-	<img src={{item.url}} alt={{item.title}}>
+<div class="apod">
+	<div class="apod__header" style="margin-bottom: 100px;">
+		<h1 class="apod__heading" style="margin-bottom: 100px;">Astronomy Picture of the Day</h1>
+		<form (ngSubmit)="submitForm(form)" #form="ngForm" class="apod__form">
+			<mat-form-field appearance="fill">
+				<mat-label>Enter a date range</mat-label>
+				<mat-date-range-input ngModelGroup="dateRange" #dateRange="ngModelGroup" [rangePicker]="picker">
+				  <input matStartDate ngModel name="startDate" placeholder="Start date">
+				  <input matEndDate ngModel name="endDate" placeholder="End date">
+				</mat-date-range-input>
+				<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+				<mat-date-range-picker #picker></mat-date-range-picker>
+			</mat-form-field>
+			<button mat-raised-button color="primary" type="submit" class="apod__form-btn">Seacrh</button>
+		</form>
+	</div>
+	<div class="apod__cards" *ngFor="let item of data">
+		<app-apod-card [data]="item"></app-apod-card>
+	</div>
+	<!-- <button class="apod__btn" (click)="getData()">More pictures</button> -->
 </div>
