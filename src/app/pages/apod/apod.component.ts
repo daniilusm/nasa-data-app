@@ -14,25 +14,30 @@ export class ApodComponent implements OnInit {
 
   @Output() data!: any;
 
+  isLoading: boolean = false;
+
   constructor(public apodService: ApodService) { }
 
   ngOnInit(): void {
-    this.getData()
+    this.getData();
   }
 
   getData() {
+    this.isLoading = true;
     this.apodService.getData().subscribe(data => {
       this.data = data;
+      this.isLoading = false;
     })
   }
 
   submitForm(form: NgForm) {
+    this.isLoading = true;
     let { startDate, endDate } = form.value.dateRange;
     let start = startDate.toISOString().slice(0, 10);
     let end = endDate.toISOString().slice(0, 10);
     this.apodService.getDataByDate(start, end).subscribe(data => {
       this.data = data;
-      console.log(data)
+      this.isLoading = false;
     })
   }
 
