@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalDetailsComponent } from '../modal-details/modal-details.component';
 
 @Component({
   selector: 'app-apod-card',
@@ -7,16 +9,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ApodCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   @Input() data: any = '';
-  details: boolean = false;
 
   ngOnInit(): void {
   }
 
-  showDetails(value: boolean) {
-    this.details = value;
+  openDialog(data: any) {
+    const dialogRef = this.dialog.open(ModalDetailsComponent, { data });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    //   this.animal = result;
+    // });
+    console.log(dialogRef)
   }
 
 }

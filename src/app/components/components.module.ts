@@ -6,6 +6,8 @@ import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { ApodCardComponent } from './apod-card/apod-card.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoaderComponent } from './loader/loader.component';
+import { ModalDetailsComponent } from './modal-details/modal-details.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -13,16 +15,19 @@ import { LoaderComponent } from './loader/loader.component';
     ApodCardComponent,
     FooterComponent,
     LoaderComponent,
+    ModalDetailsComponent,
   ],
   exports: [
     NavMenuComponent,
     ApodCardComponent,
     FooterComponent,
     LoaderComponent,
+    MatDialogModule
   ],
   imports: [
     CommonModule,
     MatButtonModule,
+    MatDialogModule
   ]
 })
 export class ComponentsModule { }

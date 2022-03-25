@@ -11,7 +11,6 @@ import { ApodService } from 'src/app/services/apod.service';
 })
 export class ApodComponent implements OnInit {
 
-
   @Output() data!: any;
 
   isLoading: boolean = false;
